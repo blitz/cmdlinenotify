@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>
+  Hello, {{ nick }}! Here is a list of your jobs:
+</p>
+
+{% if firsttime %}
+<p>
+  Your account is brand new!
+</p>
+{% endif %}
+
+{% if jobs %}
+ <ul>
+ {% for job in jobs %}
+  <li>{{ job.name }} {{ job.created_date }}
+
+    <form action="/job/{{ job.key }}" method="POST">
+      <input type="hidden" name="action" value="delete"/>
+      <input type="submit" value="delete"/>
+    </form>
+  </li>
+ {% endfor %}
+ </ul>
+{% else %}
+ <p>
+   Oops. You haven't submitted any jobs!
+ </p>
+{% endif %}
+
+{% endblock %}

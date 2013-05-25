@@ -1,0 +1,6 @@
+indexes:
+- kind: Job
+  properties:
+  - name: user_id
+  - name: created_date
+    direction: desc
