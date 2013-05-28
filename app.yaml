@@ -5,14 +5,7 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /favicon\.ico
-  static_files: images/favicon.ico
-  upload: images/favicon\.ico
 
-- url: /javascript
-  static_dir: javascript
-  secure: always
-
-- url: /.*
-  script: notify.application
-  secure: always
+- url: /_ah/spi/.*
+  script: jobapi.application
+  secure: optional
