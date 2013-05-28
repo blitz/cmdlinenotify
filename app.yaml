@@ -9,3 +9,12 @@ handlers:
 - url: /_ah/spi/.*
   script: jobapi.application
   secure: optional
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?index\.yaml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?\..*
+- ^(.*/)?client\.py$
